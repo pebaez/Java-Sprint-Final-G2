@@ -53,6 +53,7 @@ public class Menu {
 				case 3:
 
 					System.out.println("No se ha implementado este metodo");
+					System.out.println("No se ha implementado este metodo");
 
 					break;
 				case 4:
