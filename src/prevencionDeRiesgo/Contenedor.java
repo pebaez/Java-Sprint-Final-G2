@@ -6,8 +6,8 @@ public class Contenedor extends Usuario {
 
 	Scanner leer = new Scanner(System.in);
 
-	ArrayList<Asesoria> listaUsuario = new ArrayList <Asesoria>();
-	ArrayList<Capacitacion> listaCapacitacion = new ArrayList<Capacitacion>();
+	public static ArrayList<Asesoria> listaUsuario = new ArrayList <Asesoria>();
+	public static ArrayList<Capacitacion> listaCapacitacion = new ArrayList<Capacitacion>();
 
 	public String mostrarUsuario() {
 		return listaUsuario.toString();
