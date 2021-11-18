@@ -1,5 +1,6 @@
 package prevencionDeRiesgo;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -7,9 +8,19 @@ public class Menu {
 
 		Scanner leer = new Scanner(System.in);
 
-		int opcion;
 
+		/***
+		 *  Esta variable contenedor se conecta con la clase CONTENEDOR para ejecutar los metodos para registrar
+		 *  en la lista usuarios y capacitacion
+		 */
 
+		Contenedor contenedor = new Contenedor();
+
+		int contadorLista1 = 0;
+
+		int contadorLista2 = 0;
+
+		int opcion=0;
 
 		do {
 
@@ -43,17 +54,105 @@ public class Menu {
 			switch (opcion) {
 
 				case 1:
-					System.out.println("No se ha implementado este metodo");
-					System.out.println("No se ha implementado este metodo");
-					break;
+
+					Cliente cliente = new Cliente();
+
+					cliente.setFechaDeNacimiento(cliente.getFechaDeNacimiento());
+					cliente.setNombre(cliente.getNombre());
+					cliente.setRun(cliente.getRun());
+					cliente.setRut(cliente.getRut());
+					cliente.setNombres(cliente.getNombres());
+					cliente.setApellidos(cliente.getApellidos());
+					cliente.setTelefono(cliente.getTelefono());
+					cliente.setAfp(cliente.getAfp());
+					cliente.setSistemaDeSalud(cliente.getSistemaDeSalud());
+					cliente.setDireccion(cliente.getDireccion());
+					cliente.setComuna(cliente.getComuna());
+					cliente.setEdad(cliente.getEdad());
+
+					contadorLista1 = contenedor.listaUsuario.size();
+
+					contenedor.agregarCliente(cliente);
+
+					contadorLista2 = contenedor.listaUsuario.size();
+
+					if (contadorLista2 > contadorLista1 ) {
+
+						System.out.println("Felicitaciones Datos de Usuario tipo Cliente ingresado correctamente");
+
+					}
+
+
+
+
+						break;
 				case 2:
-					System.out.println("No se ha implementado este metodo");
+
+					Profesional profesional = new Profesional();
+
+
+					/***
+					 * Los tres primeros datos corresponden a la clase padre USUARIO  la cual hereda los atributos
+					 * nombre, run y fecha de nacimiento a la clase hija PROFESIONAL
+					 */
+					profesional.setRun(profesional.getRun());
+
+					profesional.setNombre(profesional.getNombre());
+
+					profesional.setFechaDeNacimiento(profesional.getFechaDeNacimiento());
+
+					profesional.setTituloProfesional(profesional.getTituloProfesional());
+
+					profesional.setFechaIngreso(profesional.getFechaIngreso());
+
+					/***
+					 * esta llamada al metodo mediante el objeto contenedor lo que hace es guardar en la lista
+					 *  array los datos de la instancia profesional
+					 */
+
+
+
+					contadorLista1 = contenedor.listaUsuario.size();
+
+					contenedor.agregarProfesional(profesional);
+
+					contadorLista2 = contenedor.listaUsuario.size();
+
+					if (contadorLista2 > contadorLista1 ) {
+
+						System.out.println("Felicitaciones Datos de Usuario tipo Profesional ingresado correctamente");
+					}
+
+					System.out.println("-------------- Verificacion que datos fueron ingresados --------------");
+					System.out.println(profesional.toString());
+					System.out.println();
+					System.out.println();
+
+					System.out.println("-------------- Profesional.analizarUsuario() --------------");
+
+					profesional.analizarUsuario();
+
+
+
 
 					break;
 				case 3:
 
-					System.out.println("No se ha implementado este metodo");
-					System.out.println("No se ha implementado este metodo");
+					Administrativo admin = new Administrativo();
+					admin.setArea(admin.getArea());
+					admin.setExperienciaPrevia(admin.getExperienciaPrevia());
+
+					contadorLista1 = contenedor.listaUsuario.size();
+
+					contenedor.agregarAdministrativo(admin);
+
+					contadorLista2 = contenedor.listaUsuario.size();
+
+					if (contadorLista2 > contadorLista1 ) {
+
+						System.out.println("Felicitaciones Datos de Usuario tipo Administrativo ingresado correctamente");
+					}
+
 
 					break;
 				case 4:
@@ -64,12 +163,16 @@ public class Menu {
 					break;
 				case 6:
 
-					System.out.println("No se ha implementado este metodo");
+					Contenedor listaContenedor = new Contenedor();
+
+					listaContenedor.listaUsuarios();
 
 					break;
 				case 7:
 
-					System.out.println("No se ha implementado este metodo");
+					Contenedor listaContenedorTipo = new Contenedor();
+
+					listaContenedorTipo.listaUsuariosTipo();
 
 					break;
 				case 8:

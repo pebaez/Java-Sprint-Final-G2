@@ -6,10 +6,10 @@ public class Profesional extends Usuario{
 	Scanner sc = new Scanner(System.in);
 	private String tituloProfesional; //min 10 max 50carac
 	private String fechaIngreso; //DD/MM/AAAA
-	
-	
+
+
 	public Profesional() {
-		
+
 	}
 
 
@@ -20,12 +20,16 @@ public class Profesional extends Usuario{
 
 	public void setTituloProfesional(String tituloProfesional) {
 		do{
-			System.out.println("Ingrese el titulo del profesional:");
-			tituloProfesional = sc.nextLine();
-			this.tituloProfesional = nombre;
+				System.out.println("Ingrese el titulo del profesional:");
+
+				tituloProfesional = sc.nextLine();
+
+				this.tituloProfesional = tituloProfesional;
+
 			} while (tituloProfesional.isBlank() || tituloProfesional.isEmpty() || tituloProfesional.length()<10 || tituloProfesional.length() > 50);
-			System.out.println("Campo ingresado con exito");
-		
+
+		System.out.println("Campo ingresado con exito");
+
 	}
 
 
@@ -54,10 +58,12 @@ public class Profesional extends Usuario{
 		return "Profesional [tituloProfesional=" + tituloProfesional + ", fechaIngreso=" + fechaIngreso + ", nombre="
 				+ nombre + ", fechaDeNacimiento=" + fechaDeNacimiento + ", run=" + run + "]";
 	}
+
+	@Override
 	public void analizarUsuario() {
 		super.analizarUsuario();
 		System.out.println("Titulo: "+tituloProfesional+". Fecha ingreso profesional: "+fechaIngreso);
 	}
-	
-	
+
+
 }
