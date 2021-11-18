@@ -2,7 +2,7 @@ package prevencionDeRiesgo;
 
 import java.util.Scanner;
 
-public class Accidente implements Registros
+ 	public class Accidente implements Registros
 {
 	Scanner sc = new Scanner(System.in);
 	private int identificadorAccidente; //obligatorio
@@ -14,10 +14,10 @@ public class Accidente implements Registros
 	private String consecuencias;//max 100 caracteres
 
 
-public Accidente() {}
+	public Accidente() {}
 
 
-public Accidente(int identificadorAccidente, Integer rutCliente, String diaAccidente, String horaAccidente,
+ 	public Accidente(int identificadorAccidente, Integer rutCliente, String diaAccidente, String horaAccidente,
 		String lugarAccidente, String origenAccidente, String consecuencias) {
 	super();
 	this.identificadorAccidente = identificadorAccidente;
@@ -30,76 +30,82 @@ public Accidente(int identificadorAccidente, Integer rutCliente, String diaAccid
 }
 
 
-public int getIdentificadorAccidente() {
+	public int getIdentificadorAccidente() {
 	return identificadorAccidente;
 }
 
 
-public void setIdentificadorAccidente(int identificadorAccidente) {
+	public void setIdentificadorAccidente(int identificadorAccidente) {
 	this.identificadorAccidente = identificadorAccidente;
 }
 
 
-public Integer getRutCliente() {
+	public Integer getRutCliente() {
 	return rutCliente;
 }
 
 
-public void setRutCliente(Integer rutCliente) {
+	public void setRutCliente(Integer rutCliente) {
 	System.out.println("Ingrese el rut, sin digito verificador");
 	rutCliente = sc.nextInt();
 	while(rutCliente > 99999999) {
 		
 	}if(rutCliente <= 99999999 && rutCliente >= 1000000);
 	this.rutCliente = rutCliente;
-	System.out.println("El rut es correcto");
+
 }
 
 
-public String getDiaAccidente() {
+	public String getDiaAccidente() {
 	return diaAccidente;
 }
 
 
-public void setDiaAccidente(String diaAccidente) {
+	public void setDiaAccidente(String diaAccidente) {
 	
 	this.diaAccidente = diaAccidente;
 }
 
 
-public String getHoraAccidente() {
+	public String getHoraAccidente() {
 	return horaAccidente;
 }
 
 
-public void setHoraAccidente(String horaAccidente) {
+	public void setHoraAccidente(String horaAccidente) {
 	this.horaAccidente = horaAccidente;
 }
 
 
-public String getLugarAccidente() {
+	public String getLugarAccidente() {
 	return lugarAccidente;
 }
 
 
-public void setLugarAccidente(String lugarAccidente) {
-	do{
-		System.out.println("Ingrese el lugar donde se produjo el accidente:");
-		lugarAccidente = sc.nextLine();
-		this.lugarAccidente = lugarAccidente;
-		} while (lugarAccidente.isBlank() || lugarAccidente.isEmpty() || lugarAccidente.length()<10|| lugarAccidente.length() > 50);
-		System.out.println("Campo ingresado correctamente");
-	
-}
+	public void setLugarAccidente(String lugarAccidente) {
+
+		do{
+
+			System.out.println("Ingrese el lugar donde se produjo el accidente:");
+
+			lugarAccidente = sc.nextLine();
 
 
-public String getOrigenAccidente() {
+			} while (lugarAccidente.isBlank() || lugarAccidente.isEmpty() || lugarAccidente.length()<10|| lugarAccidente.length() > 50);
+
+			this.lugarAccidente = lugarAccidente;
+
+	}
+
+
+	public String getOrigenAccidente() {
 	return origenAccidente;
 }
 
 
-public void setOrigenAccidente(String origenAccidente) {
-	do {
+	public void setOrigenAccidente(String origenAccidente) {
+
+		do {
 		System.out.println("Ingrese el origen del accidente.");
 		origenAccidente = sc.nextLine();
 		this.origenAccidente = origenAccidente;

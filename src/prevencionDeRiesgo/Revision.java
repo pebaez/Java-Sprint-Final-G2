@@ -115,7 +115,7 @@ public class Revision extends Visita {
 			}
 			
 		}while (!valida);
-		System.out.println("Campo ingresado con exito");
+
 	}
 
 

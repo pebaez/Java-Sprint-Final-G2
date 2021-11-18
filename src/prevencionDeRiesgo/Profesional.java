@@ -12,6 +12,14 @@ public class Profesional extends Usuario{
 
 	}
 
+	public Profesional(String nombre, String fechaDeNacimiento, int run, String tituloProfesional,
+					   String fechaIngreso) {
+		super(nombre, fechaDeNacimiento, run);
+		this.tituloProfesional = tituloProfesional;
+		this.fechaIngreso = fechaIngreso;
+	}
+
+
 
 	public String getTituloProfesional() {
 		return tituloProfesional;
@@ -44,19 +52,15 @@ public class Profesional extends Usuario{
 		System.out.println("Campo ingresado con exito");
 	}
 
-
-	public Profesional(String nombre, String fechaDeNacimiento, int run, String tituloProfesional,
-			String fechaIngreso) {
-		super(nombre, fechaDeNacimiento, run);
-		this.tituloProfesional = tituloProfesional;
-		this.fechaIngreso = fechaIngreso;
-	}
-
-
 	@Override
 	public String toString() {
-		return "Profesional [tituloProfesional=" + tituloProfesional + ", fechaIngreso=" + fechaIngreso + ", nombre="
-				+ nombre + ", fechaDeNacimiento=" + fechaDeNacimiento + ", run=" + run + "]";
+		return "\nProfesional{" +
+				", tituloProfesional='" + tituloProfesional + '\'' +
+				", fechaIngreso='" + fechaIngreso + '\'' +
+				", nombre='" + nombre + '\'' +
+				", fechaDeNacimiento='" + fechaDeNacimiento + '\'' +
+				", run=" + run +
+				"}\n " + super.toString();
 	}
 
 	@Override

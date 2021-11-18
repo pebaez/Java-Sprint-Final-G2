@@ -32,26 +32,65 @@ public class Usuario implements Asesoria{
 	}
 
 	public void setFechaDeNacimiento(String fechaDeNacimiento) {
-	do {
+
+		 boolean valida = false;
+
+		do {
+			String mensaje = "";
+
+			System.out.println("Ingrese la fecha de nacimiento. Recuerde que el formato es DD/MM/AAAA");
+
+			fechaDeNacimiento = sc.nextLine();
+
+			if(!fechaDeNacimiento.isBlank()) valida=true;
+
+			if (!fechaDeNacimiento.isEmpty()) valida =true;
+
+			if (!fechaDeNacimiento.matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/[0-9][0-9]?[0-9][0-9]$")) valida =true;
+
+			if(valida==false)
+			{
+
+				System.out.println(mensaje);
+
+			}
+
+		  	}while (!valida);
+
+
+			this.fechaDeNacimiento = fechaDeNacimiento;
+
+	/*	String mensaje = "";
+
 		System.out.println("Ingrese la fecha de nacimiento. Recuerde que el formato es DD/MM/AAAA");
+
 		fechaDeNacimiento = sc.nextLine();
 		
 		}while (fechaDeNacimiento.isBlank() || fechaDeNacimiento.isEmpty() || !fechaDeNacimiento.matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/[0-9][0-9]?[0-9][0-9]$")); 
 
-		this.fechaDeNacimiento = fechaDeNacimiento;
-	}
+		this.fechaDeNacimiento = fechaDeNacimiento;*/
+
+
+		}
 
 	public Integer getRun() {
 		return run;
 	}
 
 	public void setRun(Integer run) {
+
 		System.out.println("Ingrese el run, sin digito verificador");
+
 		run = sc.nextInt();
+
 		while(run > 99999999) {
+
 			System.out.println("Ingrese un run menor a 99999999");
+
 		}if(run <= 99999999 && run >= 1000000);
+
 		this.run = run;
+
 		sc.nextLine();
 	}
 	

@@ -14,7 +14,7 @@ public class Principal {
 		Usuario usuario = new Usuario();
 
 		//	usuario.setNombre(usuario.getNombre());
-		//usuario.setFechaDeNacimiento(usuario.getFechaDeNacimiento());
+		usuario.setFechaDeNacimiento(usuario.getFechaDeNacimiento());
 		//usuario.setRun(usuario.getRun());
 		//	System.out.println(usuario.mostrarEdad());
 		
