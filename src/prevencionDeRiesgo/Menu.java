@@ -44,6 +44,7 @@ public class Menu {
 
 				case 1:
 					System.out.println("No se ha implementado este metodo");
+					System.out.println("No se ha implementado este metodo");
 					break;
 				case 2:
 					System.out.println("No se ha implementado este metodo");
@@ -67,7 +68,7 @@ public class Menu {
 					break;
 				case 7:
 
-
+					System.out.println("No se ha implementado este metodo");
 
 					break;
 				case 8:
