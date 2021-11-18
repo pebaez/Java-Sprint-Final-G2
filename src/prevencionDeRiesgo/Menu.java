@@ -46,50 +46,12 @@ public class Menu {
 					System.out.println("No se ha implementado este metodo");
 					break;
 				case 2:
-					Profesional profesional = new Profesional();
-					profesional.formulario();
-
-					profesional.toString();
-
+					System.out.println("No se ha implementado este metodo");
 
 					break;
 				case 3:
 
-					//Instancio la clase
-					Administrativo administrativo = new Administrativo();
-					//utilizo le metodo formulario de la clase Administrativo el cual hereda de la clase
-					//Padre "Usuario" el mismo metodo y toma los atributos con el metodo super de la clase padre
-					administrativo.formulario();
-					// Seteo los datos obteniendo como quedaron los atributos en cada clase segun herencia
-
-					administrativo.setRun(administrativo.run);
-					administrativo.setNombre(administrativo.nombre);
-					administrativo.setFechaDeNacimiento(administrativo.fechaDeNacimiento);
-					administrativo.setArea(administrativo.area);
-					administrativo.setExperienciaPrevia(administrativo.experienciaPrevia);
-
-					// llamo la clase contenedor para guardar los datos ya almacenado en la instancia administrativo
-
-					Contenedor contenedor = new Contenedor();
-
-					//guardo en la variable contador el total de usuarios existentes
-
-					int contador = Contenedor.listaUsuarios.size();
-
-					//llamo a la clase almacenarAdministrativo para que guarde la lista <<listaUsuarios>> en la <<Clase Contenedor>>
-
-					contenedor.almacenarAdministrativo(administrativo);
-
-					//utilizo la variable contenedor y la comparo nuevamente el tamaño de la lista ya actualizada
-					if (Contenedor.listaUsuarios.size()>contador){
-
-						System.out.println("Datos de Administrativos Ingresados Correctamente");
-					}
-
-					System.out.println("-------------- Administrativo.toString();  ---------------");
-					System.out.println(administrativo.toString());
-					System.out.println("-------------- analizarUsuario.toString();  ---------------");
-					administrativo.analizarUsuario();
+					System.out.println("No se ha implementado este metodo");
 
 					break;
 				case 4:
@@ -100,16 +62,12 @@ public class Menu {
 					break;
 				case 6:
 
-					Contenedor listaContenedor = new Contenedor();
-
-					listaContenedor.listaUsuarios();
+					System.out.println("No se ha implementado este metodo");
 
 					break;
 				case 7:
 
-					Contenedor listaContenedorTipo = new Contenedor();
 
-					listaContenedorTipo.listaUsuariosTipo();
 
 					break;
 				case 8:
