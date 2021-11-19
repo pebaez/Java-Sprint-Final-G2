@@ -43,13 +43,17 @@ public class Visita {
 
 
 	public void setRutCliente(Integer rutCliente) {
+
 		System.out.println("Ingrese el rut, sin digito verificador");
+
 		rutCliente = sc.nextInt();
+
 		while(rutCliente> 99999999) {
 			
 		}if(rutCliente <= 99999999 && rutCliente >= 1000000);
+
 		this.rutCliente = rutCliente;
-		System.out.println("El rut es correcto");
+
 	}
 
 
@@ -88,8 +92,6 @@ public class Visita {
 
 		} while (lugar.isBlank() || lugar.isEmpty() || lugar.length()<10|| lugar.length() > 50);
 
-		System.out.println("Campo ingresado correctamente");
-
 		this.lugar = lugar;
 	}
 
@@ -101,7 +103,7 @@ public class Visita {
 	public void setComentarios(String comentarios) {
 		do {
 
-			System.out.println("Ingrese comentarios de la visita.");
+			System.out.println("Ingrese comentarios de la visita. Max 50 caracteres");
 
 			comentarios = sc.nextLine();
 
