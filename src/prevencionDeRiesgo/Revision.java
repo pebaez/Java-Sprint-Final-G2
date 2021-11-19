@@ -59,10 +59,15 @@ public class Revision extends Visita {
 
 	public void setNombreRevision(String nombreRevision) {
 		do{
+
 			System.out.println("Ingrese el nombre asociado a la revisión:");
+
 			nombreRevision = sc.nextLine();
+
 			this.nombreRevision = nombreRevision;
+
 			} while (nombreRevision.isBlank() || nombreRevision.isEmpty() || nombreRevision.length()<10 || nombreRevision.length() > 50);
+
 			System.out.println("Campo ingresado correctamente");
 		
 }
@@ -84,26 +89,32 @@ public class Revision extends Visita {
 			
 
 			System.out.println("Ingrese detalles de la revisión.");
+
 			detalleRevision = sc.nextLine();
-			this.detalleRevision= detalleRevision;
+
 			
 			if (!detalleRevision.isBlank()) valida=true;
 			
 			if(detalleRevision.isBlank())
 			{
 				mensaje +="El dato no debe estar vacio\n";
+
 				valida=false;
 				
 			}	
 			
 			if (detalleRevision.length() > 100) {
+
 				mensaje +="El dato no debe superar los 100 caracteres\n";
-				valida=false;	
+
+				valida=false;
 			}
 			
 			if (detalleRevision.length() < 5) {
+
 				mensaje +="El dato no debe ser menor a 5 caracteres\n";
-				valida=false;	
+
+				valida=false;
 			}
 			
 			
@@ -115,7 +126,8 @@ public class Revision extends Visita {
 			}
 			
 		}while (!valida);
-		System.out.println("Campo ingresado con exito");
+
+		this.detalleRevision= detalleRevision;
 	}
 
 
@@ -125,32 +137,43 @@ public class Revision extends Visita {
 	}
 
 
-	 //corre eternamente
+
 	public void setEstadoRevision(int estadoRevision) {
+
 		System.out.println("Estado de la revisión");
+
 		System.out.println("1. Sin problemas.");
+
 		System.out.println("2. Con observaciones.");
+
 		System.out.println("3. No aprueba.");
+
 		System.out.println("");
+
 		System.out.println("Ingrese la opción");
 		estadoRevision = sc.nextInt();
 		do {
 			switch(estadoRevision) {
-			//this.estadoRevision = estadoRevision;
+
 			case 1:
 				System.out.println("La revisión se aprueba sin problemas");;
 			break;
+
 			case 2:
 			System.out.println("Revisión con observaciones");
 			break;
+
 			case 3:
 				System.out.println("No aprueba");
-			//this.estadoRevision = estadoRevision;
+
 		break;
-		//	default:
-		
-			}//		System.out.println("No aprueba la revisión");	
+
+			}
+
 		}while(estadoRevision  !=1 && estadoRevision != 2 && estadoRevision != 3);
+
+		this.estadoRevision = estadoRevision;
+
 		sc.nextLine();
 		}
 	}

@@ -62,7 +62,9 @@ public class Cliente extends Usuario{
 	public void setNombres(String nombres) {
 		do{
 			System.out.println("Ingrese el nombre:");
+
 			nombres = sc.nextLine();
+
 			this.nombres = nombre;
 			
 		} while (nombres.isBlank() || nombres.isEmpty() || nombres.length()<10 || nombres.length() > 50);
@@ -79,10 +81,15 @@ public class Cliente extends Usuario{
 	public void setApellidos(String apellidos) {
 		do {
 			System.out.println("Ingrese los apellidos");
+
 			apellidos = sc.nextLine();
+
 			if (apellidos.length() >5){
+
 				if (apellidos.length() <30){
+
 					if (!apellidos.isEmpty()) {
+
 						this.apellidos = apellidos;
 						
 					}
@@ -125,12 +132,15 @@ public class Cliente extends Usuario{
 
 
 	public void setAfp(String afp) {
-	//	int num=1;
-	//	int longitud  = afp.length(thi);
+
 		do {
+
 			System.out.println("Ingrese su AFP.");
+
 			afp = sc.nextLine();
+
 			this.afp = afp;
+
 		}while (afp.length() < 4 || afp.length() > 30);
 
 	}
@@ -148,8 +158,11 @@ public class Cliente extends Usuario{
 		do {
 			
 			System.out.println("Ingrese sistema de salud correspondiente");
+
 			System.out.println("1. Fonasa");
+
 			System.out.println("2. Isapre");
+
 			sistemaDeSalud = sc.nextInt();
 		
 			
@@ -161,6 +174,7 @@ public class Cliente extends Usuario{
 			else
 			{
 				System.out.println("Opción Incorrecta debe ingresar 1 o 2");
+
 				valida=false;
 			}	
 				
@@ -181,8 +195,10 @@ public class Cliente extends Usuario{
 	public void setDireccion(String direccion) {
 		do {
 			System.out.println("Ingrese dirección.");
+
 			direccion = sc.nextLine();
-			
+
+
 		}while (direccion.length() >70 || direccion.isEmpty() || direccion.isBlank());
 		
 		this.direccion = direccion;
@@ -198,7 +214,9 @@ public class Cliente extends Usuario{
 
 	public void setComuna(String comuna) {
 		do {
+
 			System.out.println("Ingrese comuna.");
+
 			comuna = sc.nextLine();
 			
 		}while (comuna.length() >50 || comuna.isEmpty() || comuna.isBlank());
@@ -213,18 +231,26 @@ public class Cliente extends Usuario{
 	}
 
 	public void setEdad(Integer edad) {
-	do{
+
+		do{
+
 		System.out.println("Ingrese edad");
+
 		edad= sc.nextInt();
+
 		if(edad >= 0 && edad <150){
+
 			this.edad = edad;
+
 		}
-	}while(edad.equals(null));
+
+		}while(edad.equals(null));
+
 		this.edad = edad;
+
 		sc.nextLine();
 	}
-	
-	
+
 	public String getTipo() {
 		return null;
 	}
@@ -232,18 +258,9 @@ public class Cliente extends Usuario{
 	public void setTipo(String tipo) {
 		this.tipo = "Cliente";
 	}
-	
-	/*public String obtenerSistemaSalud() {
-		String prevision = "2";	
-		if (this.sistemaDeSalud == 1) {	
-			prevision = "Fonasa";		
-		} else {
-			prevision = "Isapre";
-		} return "Su sistema de salud es: " + prevision;	 
-	}
-	*/
-	@Override
-	public void analizarUsuario() {
+
+	 @Override
+		public void analizarUsuario() {
 		super.analizarUsuario();
 		System.out.println("Direccion del cliente: "+direccion+", "+comuna);
 	}
