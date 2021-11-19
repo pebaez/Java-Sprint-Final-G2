@@ -24,11 +24,11 @@ public class Profesional extends Usuario{
 
 				tituloProfesional = sc.nextLine();
 
-				this.tituloProfesional = tituloProfesional;
+
 
 			} while (tituloProfesional.isBlank() || tituloProfesional.isEmpty() || tituloProfesional.length()<10 || tituloProfesional.length() > 50);
 
-
+			this.tituloProfesional = tituloProfesional;
 
 	}
 
@@ -42,6 +42,7 @@ public class Profesional extends Usuario{
 
 			do {
 				System.out.println("Ingrese la fecha de nacimiento. Recuerde que el formato es DD/MM/AAAA");
+
 				fechaIngreso = sc.nextLine();
 
 			}while (fechaIngreso.isBlank() || fechaIngreso.isEmpty() || !fechaIngreso.matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/[0-9][0-9]?[0-9][0-9]$"));
