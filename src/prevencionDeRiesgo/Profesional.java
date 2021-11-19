@@ -28,7 +28,7 @@ public class Profesional extends Usuario{
 
 			} while (tituloProfesional.isBlank() || tituloProfesional.isEmpty() || tituloProfesional.length()<10 || tituloProfesional.length() > 50);
 
-		System.out.println("Campo ingresado con exito");
+
 
 	}
 
@@ -39,10 +39,17 @@ public class Profesional extends Usuario{
 
 
 	public void setFechaIngreso(String fechaIngreso) {
-		System.out.println("Fecha de ingreso. Recuerde que debe ingresar este formato DD/MM/AAAA");
-		fechaIngreso = sc.nextLine();
-		System.out.println("Campo ingresado con exito");
-	}
+
+			do {
+				System.out.println("Ingrese la fecha de nacimiento. Recuerde que el formato es DD/MM/AAAA");
+				fechaIngreso = sc.nextLine();
+
+			}while (fechaIngreso.isBlank() || fechaIngreso.isEmpty() || !fechaIngreso.matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/[0-9][0-9]?[0-9][0-9]$"));
+
+			this.fechaIngreso = fechaIngreso;
+		}
+
+
 
 
 	public Profesional(String nombre, String fechaDeNacimiento, int run, String tituloProfesional,

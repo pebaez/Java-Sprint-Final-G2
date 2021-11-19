@@ -46,13 +46,17 @@ public Integer getRutCliente() {
 
 
 public void setRutCliente(Integer rutCliente) {
+
 	System.out.println("Ingrese el rut, sin digito verificador");
+
 	rutCliente = sc.nextInt();
+
 	while(rutCliente > 99999999) {
 		
 	}if(rutCliente <= 99999999 && rutCliente >= 1000000);
+
 	this.rutCliente = rutCliente;
-	System.out.println("El rut es correcto");
+
 }
 
 
@@ -62,9 +66,20 @@ public String getDiaAccidente() {
 
 
 public void setDiaAccidente(String diaAccidente) {
-	
+
+
+	do {
+		System.out.println("Ingrese la fecha del accidente. Recuerde que el formato es DD/MM/AAAA");
+
+		diaAccidente = sc.nextLine();
+
+	}while (diaAccidente.isBlank() || diaAccidente.isEmpty() || !diaAccidente.matches("^([0-2][0-9]||3[0-1])/(0[0-9]||1[0-2])/[0-9][0-9]?[0-9][0-9]$"));
+
 	this.diaAccidente = diaAccidente;
 }
+
+
+
 
 
 public String getHoraAccidente() {
@@ -85,26 +100,32 @@ public String getLugarAccidente() {
 public void setLugarAccidente(String lugarAccidente) {
 	do{
 		System.out.println("Ingrese el lugar donde se produjo el accidente:");
+
 		lugarAccidente = sc.nextLine();
-		this.lugarAccidente = lugarAccidente;
+
 		} while (lugarAccidente.isBlank() || lugarAccidente.isEmpty() || lugarAccidente.length()<10|| lugarAccidente.length() > 50);
-		System.out.println("Campo ingresado correctamente");
-	
+
+
+		this.lugarAccidente = lugarAccidente;
 }
 
 
 public String getOrigenAccidente() {
 	return origenAccidente;
-}
+	}
 
 
 public void setOrigenAccidente(String origenAccidente) {
 	do {
 		System.out.println("Ingrese el origen del accidente.");
+
 		origenAccidente = sc.nextLine();
+
 		this.origenAccidente = origenAccidente;
+
 	}while (origenAccidente.length() > 100);
-	System.out.println("Campo ingresado con exito");
+
+
 }
 
 
@@ -115,12 +136,17 @@ public String getConsecuencias() {
 
 
 public void setConsecuencias(String consecuencias) {
+
 	do {
+
 		System.out.println("Ingrese las consecuencias del accidente.");
+
 		consecuencias = sc.nextLine();
+
 		this.consecuencias= consecuencias;
+
 	}while (consecuencias.length() > 100);
-	System.out.println("Campo ingresado con exito");
+
 }
 
 
