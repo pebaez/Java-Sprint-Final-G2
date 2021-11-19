@@ -184,7 +184,7 @@ public class Menu {
 				default:
 					System.out.println("Dato no valido");
 
-			}
-		} while (opcion  > 0 && opcion  < 9);
+				}
+			} while (opcion  > 0 && opcion  < 9);
+		}
 	}
-}
