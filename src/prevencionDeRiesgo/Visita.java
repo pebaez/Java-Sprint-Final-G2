@@ -81,11 +81,16 @@ public class Visita {
 	public void setLugar(String lugar) {
 		do{
 			System.out.println("Ingrese el lugar de la visita:");
+
 			lugar = sc.nextLine();
+
 			this.lugar = lugar;
-			} while (lugar.isBlank() || lugar.isEmpty() || lugar.length()<10|| lugar.length() > 50);
-			System.out.println("Campo ingresado correctamente");
-		
+
+		} while (lugar.isBlank() || lugar.isEmpty() || lugar.length()<10|| lugar.length() > 50);
+
+		System.out.println("Campo ingresado correctamente");
+
+		this.lugar = lugar;
 	}
 
 	public String getComentarios() {

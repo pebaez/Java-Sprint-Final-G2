@@ -20,8 +20,8 @@ public class Administrativo extends Usuario {
 			area = sc.nextLine();
 			this.area = area;
 			} while (area.isBlank() || area.isEmpty() || area.length()<5 || area.length() > 20);
-			System.out.println("Campo ingresado correctamente");
-		System.out.println("Gracias");
+
+			System.out.println("Gracias");
 }
 
 	public String getExperienciaPrevia() {
