@@ -40,24 +40,30 @@ public class Cliente extends Usuario{
 
 
 	public void setRut(Integer rut) {
+
+		do {
+
+			System.out.println("Ingrese el rut, sin digito verificador");
+
+			rut = sc.nextInt();
+
+			} while (rut > 99999999 );
+
+			System.out.println("Ingrese un run menor a 99999999");
+
+			if(rut <= 99999999 && rut >= 99999999);
+
+
+			this.rut = rut;
 		
-		System.out.println("Ingrese el rut, sin digito verificador");
-		run = sc.nextInt();
-		
-		while(run > 99999999) {
-			
-		}if(run <= 99999999 && run >= 1000000);
-		
-		this.rut = rut;
-		
-		sc.nextLine();
+			sc.nextLine();
 	}
-	
+
+
 
 	public String getNombres() {
 		return nombres;
 	}
-
 
 	public void setNombres(String nombres) {
 		do{
@@ -65,11 +71,11 @@ public class Cliente extends Usuario{
 
 			nombres = sc.nextLine();
 
-			this.nombres = nombre;
+
 			
 		} while (nombres.isBlank() || nombres.isEmpty() || nombres.length()<10 || nombres.length() > 50);
-		
-		
+
+		this.nombres = nombre;
 	}
 
 
