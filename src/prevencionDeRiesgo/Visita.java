@@ -95,11 +95,17 @@ public class Visita {
 
 	public void setComentarios(String comentarios) {
 		do {
+
 			System.out.println("Ingrese comentarios de la visita.");
+
 			comentarios = sc.nextLine();
-			this.comentarios= comentarios;
+
+
 		}while (comentarios.length() >= 50);
-		System.out.println("Campo ingresado con exito");
+
+		this.comentarios= comentarios;
+
+
 	}
 
 
