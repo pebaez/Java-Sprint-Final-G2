@@ -42,13 +42,18 @@ public class Capacitacion {
 
 	public void setRutCliente(Integer rutCliente) {
 		System.out.println("Ingrese el rut, sin digito verificador");
+
 		rutCliente = sc.nextInt();
+
 		while(rutCliente> 99999999) {
 			
 		}if(rutCliente <= 99999999 && rutCliente >= 1000000);
-		this.rutCliente = rutCliente;
+
+
 		System.out.println("El rut es correcto");
-	
+
+		this.rutCliente = rutCliente;
+
 		sc.nextLine();
 	
 	}
@@ -58,18 +63,11 @@ public class Capacitacion {
 	}
 
 	public void setDiaDeLaSemana(String diaDeLaSemana) {
-		/*while (true){
-			System.out.println("Ingrese el día de la semana en que se realizará la capacitación");
-			diaDeLaSemana = sc.nextLine();
-			this.diaDeLaSemana = diaDeLaSemana;
-			 if(diaDeLaSemana == "lunes"+ "martes" +"miercoles"+ "jueves" + "viernes" + "sabado" + "domingo"); //, "martes","miercoles", "jueves", "viernes", "sabado", "domingo");
-		    System.out.println("Campo ingresado correctamente");
-		    break;
-		}else {
-			System.out.println("Incorrecto");
-		} */
-		System.out.println("Ingrese el día de la semana en que se realizará la capacitación");
+
+		System.out.println("Ingrese el dia de la semana en que se realizara la capacitacion. Lunes a Domingo");
+
 		this.diaDeLaSemana = diaDeLaSemana;
+
 		System.out.println(this.diaDeLaSemana);
 	}	
 
@@ -87,10 +85,14 @@ public class Capacitacion {
 
 	public void setLugarCapacitacion(String lugarCapacitacion) {
 		do{
-			System.out.println("Ingrese el donde se realiza la capacitación:");
+			System.out.println("Ingrese el donde se realiza la capacitaciï¿½n:");
+
 			lugarCapacitacion = sc.nextLine();
+
 			this.lugarCapacitacion = lugarCapacitacion;
+
 			} while (lugarCapacitacion.isBlank() || lugarCapacitacion.isEmpty() || lugarCapacitacion.length()<10|| lugarCapacitacion.length() > 50);
+
 			System.out.println("Campo ingresado correctamente");
 		
 }
@@ -100,12 +102,15 @@ public class Capacitacion {
 	}
 
 	public void setDuracionCapacitacion(String duracionCapacitacion) {
+
 		do {
-			System.out.println("Ingrese la duración de la capacitación.");
+			System.out.println("Ingrese la duraciï¿½n de la capacitaciï¿½n.");
+
 			duracionCapacitacion = sc.nextLine();
-			this.duracionCapacitacion = duracionCapacitacion;
+
 		}while (duracionCapacitacion.length()> 0 || duracionCapacitacion.length()<70 );
-		System.out.println("Campo ingresado con exito");
+
+		this.duracionCapacitacion = duracionCapacitacion;
 	}
 	
 
@@ -114,13 +119,17 @@ public class Capacitacion {
 	}
 
 	public void setCantidadDeAsistentes(int cantidadDeAsistentes) {
-		this.cantidadDeAsistentes = cantidadDeAsistentes;
+
 		do {
+
 			System.out.println("Ingrese la cantidad de asistentes.");
+
 			cantidadDeAsistentes = sc.nextInt();
+
+			}while (cantidadDeAsistentes > 100);
+
+
 			this.cantidadDeAsistentes = cantidadDeAsistentes;
-		}while (cantidadDeAsistentes > 100);
-		System.out.println("Campo ingresado con exito");
 	}
 		
 
@@ -133,7 +142,7 @@ public class Capacitacion {
 	}
 		
 			public String mostrarDetalle() {
-				return "La capacitación se realizará en "+lugarCapacitacion+" a las "+horaCapacitacion+" horas, del día "+diaDeLaSemana+" y tendrá una duración de"+duracionCapacitacion+" \n"
+				return "La capacitaciï¿½n se realizarï¿½ en "+lugarCapacitacion+" a las "+horaCapacitacion+" horas, del dï¿½a "+diaDeLaSemana+" y tendrï¿½ una duraciï¿½n de"+duracionCapacitacion+" \n"
 						+duracionCapacitacion+" minutos.";
 }
 		}
