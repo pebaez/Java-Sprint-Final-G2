@@ -2,6 +2,14 @@ package prevencionDeRiesgo;
 
 public class Administrativo extends Usuario {
 
+
+	private String area; // obligatorio min 5 max 20 carac
+	private String experienciaPrevia; // max 100 caracteres
+
+	public Administrativo() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + ", nombre=" + nombre
@@ -15,14 +23,15 @@ public class Administrativo extends Usuario {
 
 
 	public void setArea(String area) {
-		do{
+		do {
 			System.out.println("Ingrese el area:");
-			area = sc.nextLine();
-			this.area = area;
-			} while (area.isBlank() || area.isEmpty() || area.length()<5 || area.length() > 20);
 
-			System.out.println("Gracias");
-}
+			area = sc.nextLine();
+
+		} while (area.isBlank() || area.isEmpty() || area.length() < 5 || area.length() > 20);
+
+		this.area = area;
+	}
 
 	public String getExperienciaPrevia() {
 		return experienciaPrevia;
@@ -30,6 +39,17 @@ public class Administrativo extends Usuario {
 
 
 	public void setExperienciaPrevia(String experienciaPrevia) {
+
+		do {
+
+			System.out.println("Ingrese la experiencia previa.");
+
+			experienciaPrevia = sc.nextLine();
+
+			this.experienciaPrevia = experienciaPrevia;
+
+		} while (experienciaPrevia.length() > 100);
+
 		this.experienciaPrevia = experienciaPrevia;
 	}
 
@@ -40,14 +60,9 @@ public class Administrativo extends Usuario {
 		this.experienciaPrevia = experienciaPrevia;
 	}
 
+	
+	
 
-	private String area; // obligatorio min 5 max 20 carac
-	private String experienciaPrevia; // max 100 caracteres
-	
-	
-	public Administrativo() {
-		
-	}
 	public void analizarUsuario() {
 		super.analizarUsuario();
 		System.out.println("Area: "+area+". Experiencia previa: "+experienciaPrevia);
