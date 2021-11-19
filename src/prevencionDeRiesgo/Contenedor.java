@@ -17,121 +17,146 @@ public class Contenedor extends Usuario {
 
 	public void listaUsuarios(){
 
-		System.out.println("-------LISTADO USUARIOS------------");
-
-		Iterator<Asesoria> it = listaUsuario.iterator();
-
-		Usuario tmp;
-
-		while(it.hasNext())
-		{
-			tmp = (Usuario) it.next();
-			System.out.println("Usuario: " + tmp.getRun() + ". Nombre: " + tmp.nombre + "  Fecha Nacimiento " + tmp.fechaDeNacimiento);
-		}
 
 
-		System.out.println("---------OTRA FORMA-------------");
+			if (listaUsuario.size() > 0) {
+				System.out.println("-------LISTADO USUARIOS------------");
 
+				Iterator<Asesoria> it = listaUsuario.iterator();
 
-		for(Asesoria p1: listaUsuario){
-			Usuario p2 = (Usuario) p1;
-			if (p2.getRun()>0){
+				Usuario tmp;
 
-				System.out.println(p2.nombre + p2.run + p2.fechaDeNacimiento);
+				while (it.hasNext()) {
+					tmp = (Usuario) it.next();
 
-				System.out.println("------------------------------------");
-
-				System.out.println(p2.getRun() + p2.getNombre() + p2.getFechaDeNacimiento());
-
-
+					System.out.println("Usuario: " + tmp.getRun() + ". Nombre: " + tmp.nombre + "  Fecha Nacimiento " + tmp.fechaDeNacimiento);
+				}
 			}
-		}
-
-
-
-
-		//    listaUsuarios.parallelStream().forEachOrdered(System.out::println);
-//
-
-	}
-
-	public void listaUsuariosTipo(){
-
-		try{
-
-			if (listaUsuario.size()>0)
+			else
 			{
 
-				System.out.println("-------------------------------------------");
+				System.out.println("No ha ingresado ningun tipo de Usuario aun seleccione la opcion 1 ; 2 o 3 ");
 
-				System.out.println("+----------+----------------------------------");
-				System.out.println("|** Seleccione 1.- Cliente 2.-Profesional 3.- Administrativo ");
-				System.out.print("|Indique el numero del tipo de Usuario :");
-				int tipoUsuario =  leer.nextInt();
-				leer.nextLine();
-				System.out.println("+----------+----------------------------------");
+			}
+	}
 
-				if (tipoUsuario == 1 || tipoUsuario == 2 || tipoUsuario == 3  )
-				{
 
-					if (tipoUsuario==1){
 
-						Iterator<Asesoria> it = listaUsuario.iterator();
 
-						Cliente tmp;
+	public void listaUsuariosTipo() {
 
-						while(it.hasNext())
-						{
-							tmp = (Cliente) it.next();
-							System.out.println("Rut Cliente: " + tmp.getRun() + ". Nombre: " + tmp.nombre + "  Fecha Nacimiento " + tmp.fechaDeNacimiento);
-						}
 
-					}
+		if (listaUsuario.size() > 0) {
 
-					if (tipoUsuario==2){
+			System.out.println("-------------------------------------------");
 
-						Iterator<Asesoria> it = listaUsuario.iterator();
+			System.out.println("+----------+----------------------------------");
+			System.out.println("|** Seleccione 1.- Cliente 2.-Profesional 3.- Administrativo ");
+			System.out.print("|Indique el numero del tipo de Usuario :");
+			int tipoUsuario = leer.nextInt();
+			leer.nextLine();
+			System.out.println("+----------+----------------------------------");
 
-						Profesional tmp;
+			if (tipoUsuario == 1 || tipoUsuario == 2 || tipoUsuario == 3  )
+			{
 
-						while(it.hasNext())
-						{
-							tmp = (Profesional) it.next();
-							System.out.println("Rut Profesional: " + tmp.getRun() + ". Nombre Profesional: " +
-											tmp.getNombre() + "  Fecha Nacimiento " + tmp.getFechaDeNacimiento() +
-											"Titulo Profesional =" + tmp.getTituloProfesional() + " Fecha de Ingreso =" +
-									 		tmp.getFechaIngreso());
-						}
+				System.out.println(listaUsuario.size());
+
+				for (int i = 0; i < listaUsuario.size(); i++) {
+
+
+					if (listaUsuario.get(i).getClass().getName() == "prevencionDeRiesgo.Cliente" && tipoUsuario == 1) {
+
+						System.out.println(listaUsuario.get(i).toString());
 
 					}
 
-					if (tipoUsuario==3){
+					if (listaUsuario.get(i).getClass().getName() == "prevencionDeRiesgo.Profesional" && tipoUsuario == 2) {
 
-						Iterator<Asesoria> it = listaUsuario.iterator();
-
-						Administrativo tmp;
-
-						while(it.hasNext())
-						{
-							tmp = (Administrativo) it.next();
-							System.out.println("Rut Administrativo: " + tmp.getRun() + ". Nombre: " + tmp.getNombre() + "  Fecha Nacimiento " + tmp.getFechaDeNacimiento());
-						}
+						System.out.println(listaUsuario.get(i).toString());
 
 					}
+
+					if (listaUsuario.get(i).getClass().getName() == "prevencionDeRiesgo.Administrativo" && tipoUsuario == 2) {
+
+						System.out.println(listaUsuario.get(i).toString());
+
+					}
+
 
 				}
 
 			}
 
-		}catch (InputMismatchException e){
 
-			System.out.println(e.getMessage());
+
+//				if (tipoUsuario == 1 || tipoUsuario == 2 || tipoUsuario == 3  )
+//				{
+//
+//					if (tipoUsuario==1){
+//
+//						Iterator<Asesoria> it = listaUsuario.iterator();
+//
+//						Cliente tmp;
+//
+//						while(it.hasNext())
+//						{
+//							tmp = (Cliente) it.next();
+//							System.out.println("Rut Cliente: " + tmp.getRun() + ". Nombre: " + tmp.nombre + "  Fecha Nacimiento " + tmp.fechaDeNacimiento);
+//						}
+//
+//					}
+//
+//					if (tipoUsuario==2){
+//
+//
+////						Profesional profesional = new Profesional();
+//
+//						Iterator<Asesoria> it = listaUsuario.iterator();
+//
+//						Profesional tmp;
+//
+//						while(it.hasNext())
+//						{
+//
+//
+//							tmp = (Profesional) it.next();
+//
+//
+//
+//
+//
+//							System.out.println("Rut Profesional: " + tmp.getRun() + ". Nombre Profesional: " +
+//											tmp.getNombre() + "  Fecha Nacimiento " + tmp.getFechaDeNacimiento() +
+//											"Titulo Profesional =" + tmp.getTituloProfesional() + " Fecha de Ingreso =" +
+//									 		tmp.getFechaIngreso());
+//						}
+//
+//					}
+//
+//					if (tipoUsuario==3){
+//
+//						Iterator<Asesoria> it = listaUsuario.iterator();
+//
+//						Administrativo tmp;
+//
+//						while(it.hasNext())
+//						{
+//							tmp = (Administrativo) it.next();
+//							System.out.println("Rut Administrativo: " + tmp.getRun() + ". Nombre: " + tmp.getNombre() + "  Fecha Nacimiento " + tmp.getFechaDeNacimiento());
+//						}
+//
+//					}
+//
+//				}
 
 		}
+		else{
 
+			System.out.println("No ha ingresado ningun tipo de Usuario aun seleccione la opcion 1 ; 2 o 3 ");
 
+		}
 	}
-
 	
 	public void agregarCliente(Cliente cliente) {
 		

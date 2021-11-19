@@ -1,6 +1,7 @@
 package prevencionDeRiesgo;
 
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Menu {
@@ -132,14 +133,23 @@ public class Menu {
 
 					profesional.analizarUsuario();
 
-
+					System.out.print("<<Enter>> presione Enter para ir al menu principal");
+					leer.nextLine();
 
 
 					break;
 				case 3:
 
 					Administrativo admin = new Administrativo();
+
+					admin.setRun(admin.getRun());
+
+					admin.setNombre(admin.getNombre());
+
+					admin.setFechaDeNacimiento(admin.getFechaDeNacimiento());
+
 					admin.setArea(admin.getArea());
+
 					admin.setExperienciaPrevia(admin.getExperienciaPrevia());
 
 					contadorLista1 = contenedor.listaUsuario.size();
@@ -154,12 +164,116 @@ public class Menu {
 					}
 
 
+					System.out.println("-------------- Verificación que datos fueron ingresados --------------");
+					System.out.println(admin.toString());
+					System.out.println();
+
+					System.out.println("-------------- Admin.analizarUsuario() --------------");
+					admin.analizarUsuario();
+
+					System.out.print("<<Enter>> presione Enter para ir al menu principal");
+					leer.nextLine();
+
 					break;
 				case 4:
+
 					System.out.println("No se ha implementado este metodo");
+
 					break;
 				case 5:
-					System.out.println("No se ha implementado este metodo");
+
+					/***
+					 * Codigo agregado por pbaez 19-11-2021 11:36
+					 * Elimina Usuario segun el rut ingresado
+					 */
+
+					int runUsuario;
+
+					boolean usuarioEliminado = false;
+
+					int contadorUsuarios = contenedor.listaUsuario.size();
+
+					if (contenedor.listaUsuario.size()>0)
+					{
+
+						contadorLista1 = contenedor.listaUsuario.size();
+
+
+						System.out.println("Ingrese Rut del Cliente a eliminar ** Debe ingresar solo numeros, sin digito verificador," +
+								" sin puntos Ejemplo: 99.999.999");
+
+						System.out.println("+----------+------------------------------");
+						System.out.print("|Rut a Eliminar : ");
+						runUsuario = leer.nextInt();
+						leer.nextLine();
+						System.out.println("+----------+------------------------------");
+
+
+						Iterator<Asesoria> datos = contenedor.listaUsuario.iterator();
+
+						while (datos.hasNext()) {
+							Usuario temp = (Usuario) datos.next();
+
+							if (temp.getRun() == runUsuario) {
+								temp = null;
+
+								datos.remove();
+
+								usuarioEliminado = true;
+
+								break;
+
+							}
+							{
+								usuarioEliminado = false;
+							}
+
+						}
+
+
+						if (usuarioEliminado == true)
+						{
+
+							contadorLista2 = contenedor.listaUsuario.size();
+
+							if (contadorLista2 < contadorLista1 ) {
+
+								System.out.println("Felicitaciones Datos de Usuario tipo Administrativo ingresado correctamente");
+
+								System.out.println("-----------------------Listado Despues de Eliminacion-------------------------------");
+
+								contenedor.listaUsuario.parallelStream().forEachOrdered(System.out::println);
+							}
+
+						}
+
+						if (usuarioEliminado == false)
+						{
+
+							System.out.println("Usuario no se ha eliminado debido que no existe un " +
+									"Usuario Cliente; Administrativo o Profesional  relacionado ");
+
+						}
+
+
+
+
+					}else
+					{
+
+						System.out.println();
+
+						System.out.println("No se han ingresado Registros de Información a la aplicación \n" +
+								"Debe ingresar a lo menos un Usuario para poder eliminar del Sistema \n"+
+								"en el menu principal seleccione la opción 1 ; 2 o 3 .-  \n");
+
+						System.out.println();
+					}
+
+					System.out.print("<<Enter>> presione Enter para ir al menu principal");
+					leer.nextLine();
+
+
 					break;
 				case 6:
 
@@ -167,12 +281,18 @@ public class Menu {
 
 					listaContenedor.listaUsuarios();
 
+					System.out.print("<<Enter>> presione Enter para ir al menu principal");
+					leer.nextLine();
+
 					break;
 				case 7:
 
 					Contenedor listaContenedorTipo = new Contenedor();
 
 					listaContenedorTipo.listaUsuariosTipo();
+
+					System.out.print("<<Enter>> presione Enter para ir al menu principal");
+					leer.nextLine();
 
 					break;
 				case 8:
